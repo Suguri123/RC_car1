@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가족이 함께하는 아두이노 활용 RC카 만들기</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts for modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Lucide Icons (lightweight icon library) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Left Sidebar Menu (Logo Removed) -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-badge">👪 가족이 함께 하는 메이커 교실</div>
+            </div>
+            <nav class="sidebar-menu">
+                <ul>
+                    <li class="menu-item active" data-target="section1">
+                        <i data-lucide="cpu"></i>
+                        <span>1. 아두이노와 친해지기</span>
+                    </li>
+                    <li class="menu-item" data-target="section2">
+                        <i data-lucide="wrench"></i>
+                        <span>2. RC카 조립 & 바퀴 테스트</span>
+                    </li>
+                    <li class="menu-item" data-target="section3">
+                        <i data-lucide="navigation"></i>
+                        <span>3. 벽 피하기 자율주행</span>
+                    </li>
+                    <li class="menu-item" data-target="section4">
+                        <i data-lucide="route"></i>
+                        <span>4. 라인트레이서</span>
+                    </li>
+                    <li class="menu-item" data-target="section5">
+                        <i data-lucide="bluetooth"></i>
+                        <span>5. 스마트폰 무선 조종</span>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>© 2026 제주평생교육장학진흥원</p>
+            </div>
+        </aside>
+
+        <!-- Right Content Area -->
+        <main class="content-area">
+            <!-- Poster Inspired Hero Banner at the top of the content area -->
+            <div class="hero-banner">
+                <div class="hero-header-top">
+                    <button class="btn btn-secondary btn-sm" id="theme-toggle">
+                        <i data-lucide="sun" class="theme-icon-light"></i>
+                        <i data-lucide="moon" class="theme-icon-dark" style="display: none;"></i>
+                    </button>
+                </div>
+                <h1 class="hero-main-title">아두이노를 활용한 <span class="highlight-red">RC카</span> <span class="highlight-blue">만들기</span></h1>
+                <p class="hero-tagline">🚀 직접 만들고, 코딩하고, 함께 달려요! | ✨ 상상이 현실이 되는 메이커 프로젝트!</p>
+            </div>
+
+            <div class="content-header">
+                <div class="header-title">
+                    <span class="badge" id="current-chapter-num">CHAPTER 1</span>
+                    <h2 id="current-section-title">1. 아두이노와 친해지기</h2>
+                </div>
+            </div>
+
+            <div class="content-body">
+                <!-- Section 1: 아두이노 및 피지컬 AI 기초 이해 -->
+                <section id="section1" class="tab-content active">
+                    <div class="card intro-card">
+                        <div class="card-body">
+                            <h3>🤖 아두이노가 무엇일까요?</h3>
+                            <p>아두이노(Arduino)는 우리가 짠 코드를 기억하고, 센서와 모터를 움직이게 만드는 <strong>"로봇의 작은 두뇌"</strong>예요. 컴퓨터로 신호를 주면 LED 전등을 켜거나 바퀴를 굴릴 수 있답니다!</p>
+                            
+                            <div class="grid grid-2">
+                                <div class="info-box">
+                                    <h4>💡 오늘 배울 재미있는 내용</h4>
+                                    <ul>
+                                        <li>아두이노 컴퓨터 프로그램(IDE) 실행해보기</li>
+                                        <li>반짝반짝 신호등처럼 LED 불빛 켜고 꺼보기</li>
+                                        <li>컴퓨터 화면(시리얼 모니터)으로 글자 출력하기</li>
+                                    </ul>
+                                </div>
+                                <div class="info-box">
+                                    <h4>🔌 준비물을 챙겨요!</h4>
+                                    <ul>
+                                        <li>아두이노 우노 컴퓨터 칩 & 컴퓨터 연결선</li>
+                                        <li>구멍이 송송 뚫린 빵판(브레드보드) & 꼬마 LED 전구</li>
+                                        <li>전기가 잘 통하게 도와주는 저항 & 알록달록 연결선</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card code-card">
+                        <div class="card-header">
+                            <div class="code-title">
+                                <i data-lucide="file-code"></i>
+                                <span>LED_Blink.ino (기본 LED 깜빡이기)</span>
+                            </div>
+                            <div class="code-actions">
+                                <button class="btn btn-sm btn-outline btn-copy" data-source="code-blink">
+                                    <i data-lucide="copy"></i> 복사하기
+                                </button>
+                                <button class="btn btn-sm btn-primary btn-download" data-filename="LED_Blink.ino" data-source="code-blink">
+                                    <i data-lucide="download"></i> 다운로드
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body no-padding">
+                            <pre><code id="code-blink" class="language-cpp">// 아두이노 기본 LED 깜빡이기 예제 코드
+const int LED_PIN = 13; // 아두이노 우노 보드에 내장된 LED 핀 번호 (13번)
+
+void setup() {
+  // 13번 핀을 출력(OUTPUT) 모드로 설정합니다.
+  pinMode(LED_PIN, OUTPUT);
+  // 컴퓨터와 통신을 시작합니다. (속도: 9600)
+  Serial.begin(9600);
+  Serial.println("아두이노 준비 완료!");
+}
+
+void loop() {
+  digitalWrite(LED_PIN, HIGH);   // LED 켜기 (전압 HIGH = 5V)
+  Serial.println("LED가 켜졌습니다.");
+  delay(1000);                   // 1초(1000ms) 동안 대기
+
+  digitalWrite(LED_PIN, LOW);    // LED 끄기 (전압 LOW = 0V)
+  Serial.println("LED가 꺼졌습니다.");
+  delay(1000);                   // 1초(1000ms) 동안 대기
+}</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 2: RC카 조립 -->
+                <section id="section2" class="tab-content">
+                    <div class="card intro-card">
+                        <div class="card-body">
+                            <h3>🛠️ 부릉부릉! 내 손으로 만드는 RC카</h3>
+                            <p>자동차의 뼈대에 모터와 바퀴를 달아 나만의 멋진 자동차를 조립해 봐요. 조립이 끝나면 바퀴가 앞뒤로 올바르게 굴러가는지 꼭 테스트해 보아야 합니다! (바퀴 방향이 반대로 돌면 선을 거꾸로 꽂은 것일 수 있어요!)</p>
+                            
+                            <div class="wiring-guide">
+                                <h4>🔌 전선을 어디에 꽂을까요? (아두이노 & 모터 연결 지도)</h4>
+                                <div class="table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>모터 제어 칩 이름</th>
+                                                <th>아두이노 핀 번호</th>
+                                                <th>하는 일</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>ENA</strong></td>
+                                                <td>디지털 <strong>5번</strong></td>
+                                                <td>왼쪽 바퀴 속도 조절 (빨리 달리기/천천히 달리기)</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>IN1, IN2</strong></td>
+                                                <td>디지털 <strong>6번, 7번</strong></td>
+                                                <td>왼쪽 바퀴 앞/뒤 방향 정하기</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>IN3, IN4</strong></td>
+                                                <td>디지털 <strong>8번, 9번</strong></td>
+                                                <td>오른쪽 바퀴 앞/뒤 방향 정하기</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>ENB</strong></td>
+                                                <td>디지털 <strong>10번</strong></td>
+                                                <td>오른쪽 바퀴 속도 조절 (빨리 달리기/천천히 달리기)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card code-card">
+                        <div class="card-header">
+                            <div class="code-title">
+                                <i data-lucide="file-code"></i>
+                                <span>Motor_Test.ino (모터 전/후진 및 방향 테스트)</span>
+                            </div>
+                            <div class="code-actions">
+                                <button class="btn btn-sm btn-outline btn-copy" data-source="code-motor">
+                                    <i data-lucide="copy"></i> 복사하기
+                                </button>
+                                <button class="btn btn-sm btn-primary btn-download" data-filename="Motor_Test.ino" data-source="code-motor">
+                                    <i data-lucide="download"></i> 다운로드
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body no-padding">
+                            <pre><code id="code-motor" class="language-cpp">// RC카 모터 방향 및 동작 테스트 코드
+
+// 왼쪽 모터 제어 핀
+const int ENA = 5;
+const int IN1 = 6;
+const int IN2 = 7;
+
+// 오른쪽 모터 제어 핀
+const int IN3 = 8;
+const int IN4 = 9;
+const int ENB = 10;
+
+void setup() {
+  // 모터 제어 핀들을 모두 출력 모드로 설정합니다.
+  pinMode(ENA, OUTPUT);
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
+  pinMode(ENB, OUTPUT);
+}
+
+void loop() {
+  // 1. 2초간 전진
+  moveForward(150); // 속도 범위: 0(정지) ~ 255(최대속도)
+  delay(2000);
+
+  // 2. 1초간 정지
+  moveStop();
+  delay(1000);
+
+  // 3. 2초간 후진
+  moveBackward(150);
+  delay(2000);
+
+  // 4. 1초간 정지
+  moveStop();
+  delay(1000);
+}
+
+// 전진 함수
+void moveForward(int speed) {
+  analogWrite(ENA, speed);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  
+  analogWrite(ENB, speed);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+}
+
+// 후진 함수
+void moveBackward(int speed) {
+  analogWrite(ENA, speed);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  
+  analogWrite(ENB, speed);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
+}
+
+// 정지 함수
+void moveStop() {
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+  analogWrite(ENA, 0);
+  analogWrite(ENB, 0);
+}</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: 장애물 회피(자율주행) 코딩 -->
+                <section id="section3" class="tab-content">
+                    <div class="card intro-card">
+                        <div class="card-body">
+                            <h3>🦇 박쥐처럼 초음파로 벽을 피해 달려요!</h3>
+                            <p>RC카가 장애물을 피해서 스스로 운전하는 자율주행을 배워봅니다. RC카 정면에 달린 <strong>"초음파 센서(로봇의 눈)"</strong>로 전방에 벽이 있는지 확인하고, 벽이 나타나면 <strong>"서보모터(로봇의 목)"</strong>을 이리저리 돌려 뚫려 있는 곳을 찾아 스스로 주행합니다.</p>
+                            
+                            <div class="grid grid-2">
+                                <div class="info-box">
+                                    <h4>👀 로봇의 눈과 목 연결하기</h4>
+                                    <ul>
+                                        <li><strong>초음파 센서 (눈):</strong> 소리를 쏴서(Trig: 11번) 다시 돌아오는 시간(Echo: 12번)으로 벽까지의 거리를 자로 재듯 측정해요.</li>
+                                        <li><strong>서보 모터 (목):</strong> 신호선(주황색)을 4번에 꽂아 왼쪽/오른쪽으로 목을 돌릴 수 있게 해요.</li>
+                                    </ul>
+                                </div>
+                                <div class="info-box">
+                                    <h4>🧠 자동차가 스스로 생각하는 순서</h4>
+                                    <ol>
+                                        <li>앞쪽을 보며 씩씩하게 직진해요.</li>
+                                        <li>눈앞 20cm 안에 벽이 나타나면 급정거!</li>
+                                        <li>목을 오른쪽(30도), 왼쪽(150도)으로 돌리며 어느 쪽이 뚫려있나 재보아요.</li>
+                                        <li>더 멀리 뚫려있는 넓은 길을 선택해서 방향을 꺾고 다시 달려요!</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card code-card">
+                        <div class="card-header">
+                            <div class="code-title">
+                                <i data-lucide="file-code"></i>
+                                <span>Obstacle_Avoidance.ino (자율주행 장애물 회피 코딩)</span>
+                            </div>
+                            <div class="code-actions">
+                                <button class="btn btn-sm btn-outline btn-copy" data-source="code-obstacle">
+                                    <i data-lucide="copy"></i> 복사하기
+                                </button>
+                                <button class="btn btn-sm btn-primary btn-download" data-filename="Obstacle_Avoidance.ino" data-source="code-obstacle">
+                                    <i data-lucide="download"></i> 다운로드
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body no-padding">
+                            <pre><code id="code-obstacle" class="language-cpp">// 초음파 센서 핀 정의
+#define TRIG_PIN 3
+#define ECHO_PIN 2
+
+// 모터 제어 핀 정의 (L9110H-01)
+#define MOTOR1_IA 11
+#define MOTOR1_IB 10
+
+// 모터 제어 핀 정의 (L9110H-02)
+#define MOTOR2_IA 5
+#define MOTOR2_IB 6
+
+// 부저 핀 정의
+#define BUZZER_PIN 12
+
+void setup() {
+  // 초음파 센서 핀 설정
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
+
+  // 모터 제어 핀 설정
+  pinMode(MOTOR1_IA, OUTPUT);
+  pinMode(MOTOR1_IB, OUTPUT);
+  pinMode(MOTOR2_IA, OUTPUT);
+  pinMode(MOTOR2_IB, OUTPUT);
+
+  // 부저 핀 설정
+  pinMode(BUZZER_PIN, OUTPUT);
+}
+
+void loop() {
+  // 거리 측정
+  long duration, distance;
+  digitalWrite(TRIG_PIN, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIG_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG_PIN, LOW);
+  
+  duration = pulseIn(ECHO_PIN, HIGH);
+  distance = duration * 0.034 / 2;
+
+  // 거리 조건에 따른 모터 및 부저 제어
+  if (distance > 5) {
+    // 5cm 이상일 때: 두 모터가 정방향으로 회전하고, 부저는 울리지 않음
+    digitalWrite(MOTOR1_IA, HIGH);
+    digitalWrite(MOTOR1_IB, LOW);
+    digitalWrite(MOTOR2_IA, HIGH);
+    digitalWrite(MOTOR2_IB, LOW);
+    digitalWrite(BUZZER_PIN, LOW);
+  } else {
+    // 5cm 이하일 때: 부저가 멜로디를 울리면서 후진, 좌회전 후 정지
+    
+    // 모터 정지
+    digitalWrite(MOTOR1_IA, LOW);
+    digitalWrite(MOTOR1_IB, LOW);
+    digitalWrite(MOTOR2_IA, LOW);
+    digitalWrite(MOTOR2_IB, LOW);
+    playMelody(); // 멜로디 재생
+    
+    // 모터를 0.5초 동안 후진
+    digitalWrite(MOTOR1_IA, LOW);
+    digitalWrite(MOTOR1_IB, HIGH);
+    digitalWrite(MOTOR2_IA, LOW);
+    digitalWrite(MOTOR2_IB, HIGH);
+    delay(500);
+
+    // 모터를 0.5초 동안 좌회전 (모터1은 후진, 모터2는 정방향)
+    digitalWrite(MOTOR1_IA, LOW);
+    digitalWrite(MOTOR1_IB, HIGH);
+    digitalWrite(MOTOR2_IA, HIGH);
+    digitalWrite(MOTOR2_IB, LOW);
+    delay(500);
+
+    // 모터 정지
+    digitalWrite(MOTOR1_IA, LOW);
+    digitalWrite(MOTOR1_IB, LOW);
+    digitalWrite(MOTOR2_IA, LOW);
+    digitalWrite(MOTOR2_IB, LOW);
+  }
+
+  // 짧은 딜레이 추가
+  delay(200);
+}
+
+// 멜로디 재생 함수
+void playMelody() {
+  int melody[] = {362, 394, 430, 449, 492}; // 도, 레, 미, 파, 솔 음계 (주파수 값)
+  int noteDuration = 200; // 각 음의 지속 시간 (밀리초)
+
+  for (int i = 0; i < 5; i++) {
+    tone(BUZZER_PIN, melody[i]);
+    delay(noteDuration);
+  }
+  noTone(BUZZER_PIN); // 멜로디 재생이 끝나면 부저 끄기
+}</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 4: 라인트레이서 -->
+                <section id="section4" class="tab-content">
+                    <div class="card intro-card">
+                        <div class="card-body">
+                            <h3>🔍 바닥의 검은색 선을 감지해서 쫓아가요!</h3>
+                            <p>RC카 아래에 달린 <strong>"적외선 센서(바닥을 보는 눈)"</strong>를 통해 흰 종이에 그려진 검은색 길을 탈선하지 않고 졸졸 따라가는 라인트레이서 로봇을 만들어 봐요. 검은색 선은 빛을 먹어버리고(흡수), 흰색 종이는 빛을 그대로 돌려보내는 원리를 사용합니다!</p>
+                            
+                            <div class="grid grid-2">
+                                <div class="info-box">
+                                    <h4>🚥 바퀴를 조작하는 4가지 규칙</h4>
+                                    <ul>
+                                        <li><strong>양쪽 눈 모두 흰 바닥일 때:</strong> 안전한 길 한가운데 있으니 <strong>쭉 직진!</strong></li>
+                                        <li><strong>왼쪽 눈에 검은 선이 보일 때:</strong> 왼쪽으로 이탈 중! <strong>좌회전</strong>해서 제자리로 돌아오기</li>
+                                        <li><strong>오른쪽 눈에 검은 선이 보일 때:</strong> 오른쪽으로 이탈 중! <strong>우회전</strong>해서 제자리로 돌아오기</li>
+                                        <li><strong>양쪽 눈 모두 검은 선일 때:</strong> 멈추거나 교차로 신호 대기하기</li>
+                                    </ul>
+                                </div>
+                                <div class="info-box">
+                                    <h4>🔌 센서 연결 방법</h4>
+                                    <ul>
+                                        <li><strong>왼쪽 눈 센서:</strong> 아두이노 A0 핀에 꽂아요.</li>
+                                        <li><strong>오른쪽 눈 센서:</strong> 아두이노 A1 핀에 꽂아요.</li>
+                                        <li>* 만약 검은 선을 잘 구별하지 못하면 센서 뒷부분의 황금색 조절 나사(가변저항)를 드라이버로 돌려보며 조절해 봐요!</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card code-card">
+                        <div class="card-header">
+                            <div class="code-title">
+                                <i data-lucide="file-code"></i>
+                                <span>arduino_rccar_IR.ino (라인트레이서 코딩)</span>
+                            </div>
+                            <div class="code-actions">
+                                <button class="btn btn-sm btn-outline btn-copy" data-source="code-line">
+                                    <i data-lucide="copy"></i> 복사하기
+                                </button>
+                                <button class="btn btn-sm btn-primary btn-download" data-filename="arduino_rccar_IR.ino" data-source="code-line">
+                                    <i data-lucide="download"></i> 다운로드
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body no-padding">
+                            <pre><code id="code-line" class="language-cpp">// TCRT5000 센서 핀 정의
+#define RIGHT_SENSOR_PIN 4
+#define LEFT_SENSOR_PIN 7
+
+// 모터 제어 핀 정의 (L9110H-01)
+#define MOTOR1_IA 11
+#define MOTOR1_IB 10
+
+// 모터 제어 핀 정의 (L9110H-02)
+#define MOTOR2_IA 5
+#define MOTOR2_IB 6
+
+void setup() {
+  // TCRT5000 센서 핀 설정
+  pinMode(RIGHT_SENSOR_PIN, INPUT);
+  pinMode(LEFT_SENSOR_PIN, INPUT);
+
+  // 모터 제어 핀 설정
+  pinMode(MOTOR1_IA, OUTPUT);
+  pinMode(MOTOR1_IB, OUTPUT);
+  pinMode(MOTOR2_IA, OUTPUT);
+  pinMode(MOTOR2_IB, OUTPUT);
+}
+
+void loop() {
+  // 센서 값 읽기
+  bool rightSensor = digitalRead(RIGHT_SENSOR_PIN);
+  bool leftSensor = digitalRead(LEFT_SENSOR_PIN);
+
+  // 라인트레이서 로직
+  if (leftSensor == LOW && rightSensor == LOW) {
+    // 양쪽 센서가 라인을 감지할 때: 직진
+    digitalWrite(MOTOR1_IA, HIGH);
+    digitalWrite(MOTOR1_IB, LOW);
+    digitalWrite(MOTOR2_IA, HIGH);
+    digitalWrite(MOTOR2_IB, LOW);
+  } 
+  else if (leftSensor == LOW && rightSensor == HIGH) {
+    // 좌측 센서가 라인을 감지할 때: 좌회전
+    digitalWrite(MOTOR1_IA, LOW);
+    digitalWrite(MOTOR1_IB, LOW);
+    digitalWrite(MOTOR2_IA, HIGH);
+    digitalWrite(MOTOR2_IB, LOW);
+  } 
+  else if (leftSensor == HIGH && rightSensor == LOW) {
+    // 우측 센서가 라인을 감지할 때: 우회전
+    digitalWrite(MOTOR1_IA, HIGH);
+    digitalWrite(MOTOR1_IB, LOW);
+    digitalWrite(MOTOR2_IA, LOW);
+    digitalWrite(MOTOR2_IB, LOW);
+  } 
+  else {
+    // 양쪽 센서가 라인을 감지하지 않을 때: 정지
+    digitalWrite(MOTOR1_IA, LOW);
+    digitalWrite(MOTOR1_IB, LOW);
+    digitalWrite(MOTOR2_IA, LOW);
+    digitalWrite(MOTOR2_IB, LOW);
+  }
+
+  delay(10); // 짧은 딜레이 추가
+}</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 5: 블루투스 조종 코딩 -->
+                <section id="section5" class="tab-content">
+                    <div class="card intro-card">
+                        <div class="card-body">
+                            <h3>🎮 스마트폰으로 조종하는 무선 조종 RC카</h3>
+                            <p>스마트폰의 무선 인터넷 신호 중 하나인 <strong>"블루투스(Bluetooth)"</strong> 기능을 이용해 RC카를 무선 조종하는 단계예요. 스마트폰 조종기 앱으로 명령 버튼을 누르면 무선 전송을 통해 RC카가 신호에 반응하여 동작합니다.</p>
+                            
+                            <div class="grid grid-2">
+                                <div class="info-box">
+                                    <h4>📶 블루투스 수신 칩(HC-06) 연결하기</h4>
+                                    <ul>
+                                        <li><strong>TXD 핀:</strong> 아두이노의 2번 구멍에 연결해요.</li>
+                                        <li><strong>RXD 핀:</strong> 아두이노의 3번 구멍에 연결해요.</li>
+                                        <li><strong>VCC와 GND:</strong> 아두이노의 5V(빨간줄)와 GND(검은줄)에 연결해요.</li>
+                                        <li>* 아두이노가 스마트폰과 비밀 대화를 나누는 안테나 역할을 해줍니다.</li>
+                                    </ul>
+                                </div>
+                                <div class="info-box">
+                                    <h4>📱 스마트폰 앱 세팅 및 비밀 문자</h4>
+                                    <ul>
+                                        <li>스마트폰 앱스토어에서 <strong>"Bluetooth Controller"</strong> 앱을 설치해요.</li>
+                                        <li>조종기의 화살표를 누를 때마다 보내는 알파벳 약속:
+                                            <ul>
+                                                <li><strong>F (Forward):</strong> 앞으로 가기</li>
+                                                <li><strong>B (Backward):</strong> 뒤로 가기</li>
+                                                <li><strong>L (Left):</strong> 왼쪽으로 돌기</li>
+                                                <li><strong>R (Right):</strong> 오른쪽으로 돌기</li>
+                                                <li><strong>S (Stop):</strong> 멈추기 (손가락을 뗄 때 전송되도록 세팅)</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card code-card">
+                        <div class="card-header">
+                            <div class="code-title">
+                                <i data-lucide="file-code"></i>
+                                <span>Bluetooth_Control.ino (블루투스 원격 조종 코딩)</span>
+                            </div>
+                            <div class="code-actions">
+                                <button class="btn btn-sm btn-outline btn-copy" data-source="code-bluetooth">
+                                    <i data-lucide="copy"></i> 복사하기
+                                </button>
+                                <button class="btn btn-sm btn-primary btn-download" data-filename="Bluetooth_Control.ino" data-source="code-bluetooth">
+                                    <i data-lucide="download"></i> 다운로드
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body no-padding">
+                            <pre><code id="code-bluetooth" class="language-cpp">#include <SoftwareSerial.h>
+
+// 블루투스 모듈 핀 설정 (D2: RX, D3: TX)
+// 아두이노 RX(D2)는 블루투스의 TXD에 연결
+// 아두이노 TX(D3)는 블루투스의 RXD에 연결
+SoftwareSerial BTSerial(2, 3);
+
+// 모터 제어 핀
+const int ENA = 5;
+const int IN1 = 6;
+const int IN2 = 7;
+const int IN3 = 8;
+const int IN4 = 9;
+const int ENB = 10;
+
+void setup() {
+  pinMode(ENA, OUTPUT);
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
+  pinMode(ENB, OUTPUT);
+  
+  // 시리얼 모니터 및 블루투스 속도 설정 (기본 9600)
+  Serial.begin(9600);
+  BTSerial.begin(9600);
+  Serial.println("블루투스 조종 대기 중...");
+}
+
+void loop() {
+  // 블루투스로부터 데이터가 들어왔는지 확인
+  if (BTSerial.available()) {
+    char cmd = BTSerial.read(); // 1글자 읽기
+    Serial.print("수신된 명령어: ");
+    Serial.println(cmd);
+    
+    // 수신된 알파벳에 따라 모터 구동
+    switch(cmd) {
+      case 'F': // Forward (전진)
+        moveForward(180);
+        break;
+      case 'B': // Backward (후진)
+        moveBackward(180);
+        break;
+      case 'L': // Left (좌회전)
+        turnLeft(150);
+        break;
+      case 'R': // Right (우회전)
+        turnRight(150);
+        break;
+      case 'S': // Stop (정지)
+        moveStop();
+        break;
+    }
+  }
+}
+
+// 기본 이동 함수들
+void moveForward(int speed) {
+  analogWrite(ENA, speed);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  analogWrite(ENB, speed);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+}
+
+void moveBackward(int speed) {
+  analogWrite(ENA, speed);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  analogWrite(ENB, speed);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
+}
+
+void turnLeft(int speed) {
+  analogWrite(ENA, speed);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH); // 제자리 좌회전
+  analogWrite(ENB, speed);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+}
+
+void turnRight(int speed) {
+  analogWrite(ENA, speed);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);  // 제자리 우회전
+  analogWrite(ENB, speed);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
+}
+
+void moveStop() {
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+  analogWrite(ENA, 0);
+  analogWrite(ENB, 0);
+}</code></pre>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <footer class="main-footer">
+                <div class="sponsor-logos">
+                    <span>제주평생교육장학진흥원</span>
+                    <span>제주도민대학</span>
+                    <span>상상 E-room</span>
+                </div>
+                <p>© 2026 제주평생교육장학진흥원 | 가족과 함께하는 메이커 교실</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Script file -->
+    <script src="app.js"></script>
+</body>
+</html>
