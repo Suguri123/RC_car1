@@ -145,6 +145,54 @@ void loop() {
 }</code></pre>
                         </div>
                     </div>
+
+                    <!-- 자율주행 RC카 작동 원리 카드 (PDF 학습자료 참고) -->
+                    <div class="card intro-card" style="margin-top: 2rem;">
+                        <div class="card-body">
+                            <h3>🚀 자율주행 RC카는 어떻게 작동할까요?</h3>
+                            <p>자율주행 RC카는 사람의 조종 없이도 스스로 움직이는 똑똑한 자동차예요. 작동하는 기본 원리는 아래와 같은 흐름으로 이루어집니다.</p>
+                            
+                            <div class="flowchart-container" style="background: var(--bg-primary); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-color); margin: 1.5rem 0; text-align: center;">
+                                <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                                    <div style="flex: 1; min-width: 120px; background: var(--bg-secondary); padding: 1rem; border-radius: 0.5rem; border: 2px solid var(--accent-orange); box-shadow: var(--card-shadow);">
+                                        <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">👀</div>
+                                        <strong style="color: var(--accent-orange);">1. 센서 (인식)</strong>
+                                        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">초음파/적외선 센서가 주변 장애물과 차선을 감지해요.</div>
+                                    </div>
+                                    <div style="font-size: 1.5rem; color: var(--text-light);">➡️</div>
+                                    <div style="flex: 1; min-width: 120px; background: var(--bg-secondary); padding: 1rem; border-radius: 0.5rem; border: 2px solid var(--accent-blue); box-shadow: var(--card-shadow);">
+                                        <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">🧠</div>
+                                        <strong style="color: var(--accent-blue);">2. 아두이노 (판단)</strong>
+                                        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">센서가 보내온 정보를 분석해서 어떻게 움직일지 결정해요.</div>
+                                    </div>
+                                    <div style="font-size: 1.5rem; color: var(--text-light);">➡️</div>
+                                    <div style="flex: 1; min-width: 120px; background: var(--bg-secondary); padding: 1rem; border-radius: 0.5rem; border: 2px solid #16a34a; box-shadow: var(--card-shadow);">
+                                        <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">⚙️</div>
+                                        <strong style="color: #16a34a;">3. 모터 (제어)</strong>
+                                        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">결정된 명령에 따라 바퀴를 굴리며 스스로 주행해요.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-2">
+                                <div class="info-box">
+                                    <h4>💡 실제 자율주행 자동차 vs 교육용 RC카</h4>
+                                    <ul>
+                                        <li><strong>실제 자율주행차:</strong> 수많은 고성능 센서(라이다, 카메라, 레이더 등)와 복잡한 인공지능(AI) 알고리즘을 사용해요.</li>
+                                        <li><strong>교육용 RC카:</strong> 초음파 및 적외선 센서와 아두이노 보드를 활용한 기초 프로그래밍을 통해 자율주행의 핵심 기본 원리를 배워요.</li>
+                                    </ul>
+                                </div>
+                                <div class="info-box">
+                                    <h4>🚗 실제 자동차의 똑똑한 안전 시스템들</h4>
+                                    <ul>
+                                        <li><strong>자동긴급제동(AEB):</strong> 전방 충돌이 예상되면 스스로 멈춰요.</li>
+                                        <li><strong>차간거리제어(ACC):</strong> 앞차와의 안전거리를 일정하게 유지하며 달려요.</li>
+                                        <li><strong>차선이탈경고(LDW):</strong> 차선을 벗어나면 운전자에게 경고를 줘요.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- Section: 아두이노 코드 업로드 방법 -->
@@ -388,6 +436,35 @@ void moveStop() {
                         </div>
                     </div>
 
+                    <!-- 초음파 센서 원리 카드 (PDF 학습자료 참고) -->
+                    <div class="card intro-card" style="margin-top: 2rem;">
+                        <div class="card-body">
+                            <h3>🦇 초음파 센서(HC-SR04)의 거리 계산 원리</h3>
+                            <p>초음파 센서는 박쥐처럼 <strong>초음파(귀에 들리지 않는 높은 소리)</strong>를 발사한 뒤, 물체에 부딪혀 돌아오는 시간을 계산해서 거리를 알아내요.</p>
+                            
+                            <div class="grid grid-2" style="margin-top: 1.5rem;">
+                                <div class="info-box" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border-right: 1px solid var(--border-color); padding-right: 1.5rem;">
+                                    <div style="text-align: center; margin-bottom: 1rem;">
+                                        <strong style="color: var(--accent-orange); font-size: 1.1rem;">🔊 TRIG (송신부):</strong> 초음파를 쏴요!
+                                        <br><span style="font-size: 1.5rem;">📡 ───＞</span>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <strong style="color: var(--accent-blue); font-size: 1.1rem;">🎙️ ECHO (수신부):</strong> 되돌아온 소리를 받아요!
+                                        <br><span style="font-size: 1.5rem;">＜─── 📻</span>
+                                    </div>
+                                </div>
+                                <div class="info-box">
+                                    <h4>📐 거리 계산 공식</h4>
+                                    <p>소리가 공기 중에서 퍼져나가는 속도는 <strong>약 340m/s</strong>(1초에 340미터 이동)예요. 거리는 아래 공식으로 계산됩니다.</p>
+                                    <div style="background: var(--bg-primary); padding: 1rem; border-radius: 0.5rem; font-weight: 700; text-align: center; margin-top: 0.5rem; border: 1px solid var(--border-color); font-size: 1.1rem; color: var(--accent-blue);">
+                                        거리 = 소리의 속도(340m/s) × 걸린 시간 ÷ 2
+                                    </div>
+                                    <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.5rem; line-height: 1.4;">* 2로 나누는 이유는 소리가 물체까지 <strong>왕복(갔다가 돌아오는 시간)</strong>했기 때문에, 편도 거리를 구하기 위해서예요!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="card code-card">
                         <div class="card-header">
                             <div class="code-title">
@@ -528,6 +605,32 @@ void playMelody() {
                                         <li><strong>오른쪽 눈 센서:</strong> 아두이노 A1 핀에 꽂아요.</li>
                                         <li>* 만약 검은 선을 잘 구별하지 못하면 센서 뒷부분의 황금색 조절 나사(가변저항)를 드라이버로 돌려보며 조절해 봐요!</li>
                                     </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 적외선 센서 원리 카드 (PDF 학습자료 참고) -->
+                    <div class="card intro-card" style="margin-top: 2rem;">
+                        <div class="card-body">
+                            <h3>🔍 적외선 센서(TCRT5000)의 감지 원리</h3>
+                            <p>적외선 센서는 사람이 볼 수 없는 빛인 <strong>적외선(IR)</strong>을 이용해 바닥의 명암(밝고 어두움)을 구별해요.</p>
+                            
+                            <div class="grid grid-2" style="margin-top: 1.5rem;">
+                                <div class="info-box">
+                                    <h4>🔆 적외선 송수신 방식</h4>
+                                    <ul>
+                                        <li><strong>적외선 송신기 (LED):</strong> 보이지 않는 적외선 빛을 바닥으로 뿜어내요.</li>
+                                        <li><strong>적외선 수신기 (Phototransistor):</strong> 바닥에서 반사되어 되돌아오는 적외선 빛의 양을 측정해요.</li>
+                                    </ul>
+                                </div>
+                                <div class="info-box">
+                                    <h4>🎨 흰색과 검은색의 빛 반사율 차이</h4>
+                                    <ul>
+                                        <li><strong style="color: #64748b;">흰색 바닥 (흰 종이):</strong> 적외선 빛을 <strong>많이 반사</strong>하여 센서가 강한 신호를 받아요.</li>
+                                        <li><strong style="color: #0f172a;">검은색 바닥 (라인):</strong> 적외선 빛을 <strong>대부분 흡수</strong>하여 센서가 반사된 빛을 받지 못해요.</li>
+                                    </ul>
+                                    <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.5rem; line-height: 1.4;">* 이 차이를 분석하여 검은색 선 위에 있는지, 흰색 바닥 위에 있는지를 판단합니다.</p>
                                 </div>
                             </div>
                         </div>
