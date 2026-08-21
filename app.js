@@ -59,6 +59,56 @@ document.addEventListener("DOMContentLoaded", () => {
             // Update Header Title
             const menuText = item.querySelector("span").textContent;
             currentSectionTitle.textContent = menuText;
+
+            // Update Chapter Badge
+            const currentChapterNum = document.getElementById("current-chapter-num");
+            if (currentChapterNum) {
+                const chapterMatch = menuText.match(/^(\d+)\./);
+                if (chapterMatch) {
+                    currentChapterNum.textContent = `CHAPTER ${chapterMatch[1]}`;
+                } else {
+                    currentChapterNum.textContent = `가이드`;
+                }
+            }
+        });
+    });
+
+    // Bluetooth Code Tab Switching Logic
+    const btTabButtons = document.querySelectorAll(".bt-tab-btn");
+    const btCodeContainers = document.querySelectorAll(".code-version-body");
+    const btCopyBtn = document.getElementById("bt-copy-btn");
+    const btDownloadBtn = document.getElementById("bt-download-btn");
+
+    btTabButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const targetCode = btn.getAttribute("data-target-code");
+
+            // Toggle active classes on tab buttons
+            btTabButtons.forEach(b => {
+                b.classList.remove("btn-primary");
+                b.classList.add("btn-outline");
+                b.style.background = "transparent";
+            });
+            btn.classList.remove("btn-outline");
+            btn.classList.add("btn-primary");
+            btn.style.background = "";
+
+            // Toggle display of code containers
+            btCodeContainers.forEach(container => {
+                container.style.display = "none";
+            });
+            const activeContainer = document.getElementById(`bt-code-container-${targetCode}`);
+            if (activeContainer) {
+                activeContainer.style.display = "block";
+            }
+
+            // Update data-source for copy and download buttons
+            if (btCopyBtn) {
+                btCopyBtn.setAttribute("data-source", `code-bluetooth-${targetCode}`);
+            }
+            if (btDownloadBtn) {
+                btDownloadBtn.setAttribute("data-source", `code-bluetooth-${targetCode}`);
+            }
         });
     });
 

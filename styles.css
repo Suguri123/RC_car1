@@ -127,6 +127,27 @@ body {
     box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
 }
 
+/* 스타일이 다른 가이드 전용 메뉴 아이템 */
+.menu-item.menu-item-guide {
+    border-style: dashed;
+    border-color: var(--accent-orange);
+    color: var(--accent-orange);
+    background-color: rgba(249, 115, 22, 0.03);
+}
+
+.menu-item.menu-item-guide:hover {
+    background-color: rgba(249, 115, 22, 0.08);
+    color: var(--accent-orange);
+    border-color: var(--accent-orange);
+}
+
+.menu-item.menu-item-guide.active {
+    background-color: var(--accent-orange);
+    color: var(--text-white);
+    border-color: var(--accent-orange);
+    box-shadow: 0 4px 10px rgba(249, 115, 22, 0.25);
+}
+
 .menu-item i {
     width: 20px;
     height: 20px;
@@ -388,7 +409,26 @@ pre {
 code {
     font-family: 'Fira Code', monospace;
     font-size: 0.9rem;
+}
+
+pre code {
     color: var(--code-text);
+}
+
+:not(pre) > code {
+    background-color: #e2e8f0;
+    color: #0f172a;
+    padding: 0.15rem 0.4rem;
+    border-radius: 0.35rem;
+    font-weight: 600;
+    font-size: 0.85em;
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] :not(pre) > code {
+    background-color: #334155;
+    color: #f8fafc;
+    border-color: #475569;
 }
 
 /* Buttons */
@@ -441,6 +481,24 @@ code {
     padding: 0.4rem 0.8rem;
     font-size: 0.8rem;
     border-radius: 0.375rem;
+}
+
+.btn-copy, .btn-download {
+    font-size: 0.95rem;
+    padding: 0.5rem 1.1rem;
+}
+
+.btn.btn-download {
+    background-color: #00979D;
+    color: var(--text-white);
+    border-color: #00979D;
+    box-shadow: 0 4px 6px rgba(0, 151, 157, 0.15);
+}
+
+.btn.btn-download:hover {
+    background-color: #008085;
+    border-color: #008085;
+    transform: translateY(-1px);
 }
 
 /* Tab contents animation */
