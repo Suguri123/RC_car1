@@ -326,6 +326,7 @@ body {
     padding: 1.5rem;
     border-radius: 0.75rem;
     border: 1px solid var(--border-color);
+    font-size: 1.05rem;
 }
 
 .info-box h4 {
@@ -343,6 +344,12 @@ body {
 
 .info-box li {
     margin-bottom: 0.5rem;
+}
+
+/* 아두이노 업로드 방법 가이드 텍스트 크기 */
+.steps-container p, 
+.steps-container li {
+    font-size: 1.05rem;
 }
 
 /* Tables */
