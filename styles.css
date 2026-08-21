@@ -365,7 +365,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 0.5rem;
-    font-size: 0.95rem;
+    font-size: 1.05rem;
 }
 
 th, td {
@@ -413,6 +413,7 @@ code {
 
 pre code {
     color: var(--code-text);
+    font-size: 0.98rem;
 }
 
 :not(pre) > code {
