@@ -277,6 +277,74 @@ void loop() {
                         <div class="card-body">
                             <h3>🛠️ 부릉부릉! 내 손으로 만드는 RC카</h3>
                             <p>자동차의 뼈대에 모터와 바퀴를 달아 나만의 멋진 자동차를 조립해 봐요. 조립이 끝나면 바퀴가 앞뒤로 올바르게 굴러가는지 꼭 테스트해 보아야 합니다! (바퀴 방향이 반대로 돌면 선을 거꾸로 꽂은 것일 수 있어요!)</p>
+
+                            <!-- 구성품 확인 카드 (다운로드 이미지 참고) -->
+                            <div class="card intro-card" style="margin-top: 2rem; margin-bottom: 2rem; border-color: var(--accent-blue);">
+                                <div class="card-body">
+                                    <h3 style="color: var(--accent-blue);">📦 조립 전 구성품을 확인해요!</h3>
+                                    <p>상자를 열어 아래 그림과 같은 구성품들이 모두 들어있는지 꼼꼼하게 확인해 보세요.</p>
+                                    
+                                    <div class="components-image-container" style="text-align: center; margin: 1.5rem 0; padding: 1rem; background-color: var(--bg-primary); border: 2px dashed var(--border-color); border-radius: 1rem;">
+                                        <img src="components.jpg" alt="RC카 조립 구성품" style="max-width: 100%; height: auto; border-radius: 0.5rem; box-shadow: var(--card-shadow); border: 4px solid var(--bg-secondary);">
+                                    </div>
+
+                                    <div class="components-checklist" style="margin-top: 1.5rem;">
+                                        <h4 style="color: var(--accent-orange); font-weight: 800; margin-bottom: 1rem; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                            <i data-lucide="check-square"></i> 구성품 체크리스트 (클릭해서 체크해 보세요!)
+                                        </h4>
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; font-size: 1.05rem;">
+                                            <div>
+                                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 600;">
+                                                    <input type="checkbox" style="width: 18px; height: 18px; cursor: pointer;"> 🧱 MDF 나무 판 (1~16번)
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 600;">
+                                                    <input type="checkbox" style="width: 18px; height: 18px; cursor: pointer;"> 🖼️ 아크릴 판 (A, B)
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 600;">
+                                                    <input type="checkbox" style="width: 18px; height: 18px; cursor: pointer;"> 🟡 바퀴 (2개) & 볼캐스터 (1개)
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 600;">
+                                                    <input type="checkbox" style="width: 18px; height: 18px; cursor: pointer;"> 🔌 아두이노 보드 & USB 선
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 600;">
+                                                    <input type="checkbox" style="width: 18px; height: 18px; cursor: pointer;"> ⚙️ 노란색 모터 (2개)
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 600;">
+                                                    <input type="checkbox" style="width: 18px; height: 18px; cursor: pointer;"> 🔋 건전지 끼우개 & 스위치
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 600;">
+                                                    <input type="checkbox" style="width: 18px; height: 18px; cursor: pointer;"> 📡 초음파 & 적외선 센서 (2개)
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 600;">
+                                                    <input type="checkbox" style="width: 18px; height: 18px; cursor: pointer;"> 🪛 드라이버 & 목공풀
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 600;">
+                                                    <input type="checkbox" style="width: 18px; height: 18px; cursor: pointer;"> 🔩 나사, 볼트, 너트, 오링
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div style="margin-top: 1.25rem; font-size: 0.9rem; color: var(--text-light); border-top: 1px dashed var(--border-color); padding-top: 0.75rem;">
+                                            * <strong>개별 준비물:</strong> AA 건전지 4개(알카라인 권장), 나무 판을 꾸밀 색칠 도구(싸인펜 등)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             
                             <div class="wiring-guide">
                                 <h4>🔌 전선을 어디에 꽂을까요? (아두이노 & 모터 연결 지도)</h4>
