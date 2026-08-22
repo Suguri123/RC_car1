@@ -268,9 +268,12 @@ void loop() {
                                         <span style="background: var(--accent-orange); color: white; border-radius: 50%; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem;">5</span>
                                         코드 확인(컴파일)하기
                                     </h4>
-                                    <p style="margin-left: 2rem;">
-                                        아두이노 IDE 왼쪽 상단에 있는 <strong>✔️ (확인/Verify)</strong> 버튼을 누릅니다. 코드가 올바르게 작성되었는지 검사하는 단계로, 잠시 기다리면 하단 출력창에 <strong style="color: var(--accent-blue);">Done compiling (컴파일 완료)</strong> 문구가 뜹니다.
-                                    </p>
+                                    <div style="margin-left: 2rem;">
+                                        <p>아두이노 IDE 왼쪽 상단에 있는 <strong>✔️ (확인/Verify)</strong> 버튼을 누릅니다. 코드가 올바르게 작성되었는지 검사하는 단계로, 잠시 기다리면 하단 출력창에 <strong style="color: var(--accent-blue);">Done compiling (컴파일 완료)</strong> 문구가 뜹니다.</p>
+                                        <div style="margin-top: 1rem; text-align: center; padding: 0.5rem; background-color: var(--bg-primary); border-radius: 0.5rem; border: 1px solid var(--border-color);">
+                                            <img src="compile_check.png" alt="아두이노 IDE 컴파일 버튼 확인" style="max-width: 100%; height: auto; border-radius: 0.25rem; box-shadow: var(--card-shadow);">
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="step-item" style="margin-bottom: 0.5rem;">
@@ -1357,13 +1360,13 @@ void stopMotors() {
                 </section>
             </div>
             
-            <footer class="main-footer">
-                <div class="sponsor-logos">
+            <footer class="main-footer" style="text-align: left;">
+                <div class="sponsor-logos" style="justify-content: flex-start; gap: 1rem; flex-wrap: wrap;">
                     <span>제주평생교육장학진흥원</span>
                     <span>제주도민대학</span>
                     <span>상상 E-room</span>
                 </div>
-                <p style="text-align: center; font-size: 1.15rem; font-weight: 600; color: var(--text-secondary); margin-top: 1.25rem;">가족과 함께하는 메이커 교실 교육생들을 위한 교육자료 배포용 사이트입니다.</p>
+                <p style="text-align: left; font-size: 1.15rem; font-weight: 600; color: var(--text-secondary); margin-top: 1.25rem;">가족과 함께하는 메이커 교실 교육생들을 위한 교육자료 배포용 사이트입니다.</p>
             </footer>
         </main>
     </div>
