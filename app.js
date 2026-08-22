@@ -110,14 +110,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 btDownloadBtn.setAttribute("data-source", `code-bluetooth-${targetCode}`);
             }
 
-            // Toggle iPhone note visibility
+            // Toggle Chrome/iPhone note visibility
+            const chromeNote = document.getElementById("chrome-note");
             const iphoneNote = document.getElementById("iphone-note");
-            if (iphoneNote) {
-                if (targetCode === "3") {
-                    iphoneNote.style.display = "inline-block";
-                } else {
-                    iphoneNote.style.display = "none";
-                }
+            if (targetCode === "3") {
+                if (chromeNote) chromeNote.style.display = "none";
+                if (iphoneNote) iphoneNote.style.display = "inline-block";
+            } else {
+                if (chromeNote) chromeNote.style.display = "inline-block";
+                if (iphoneNote) iphoneNote.style.display = "none";
             }
         });
     });
