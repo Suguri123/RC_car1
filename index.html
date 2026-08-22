@@ -432,34 +432,8 @@ void loop() {
 
                 <!-- Section 3: 장애물 회피(자율주행) 코딩 -->
                 <section id="section3" class="tab-content">
-                    <div class="card intro-card">
-                        <div class="card-body">
-                            <h3>🦇 박쥐처럼 초음파로 벽을 피해 달려요!</h3>
-                            <p>RC카가 장애물을 피해서 스스로 운전하는 자율주행을 배워봅니다. RC카 정면에 달린 <strong>"초음파 센서(로봇의 눈)"</strong>로 전방에 벽이 있는지 확인하고, 벽이 나타나면 <strong>"서보모터(로봇의 목)"</strong>을 이리저리 돌려 뚫려 있는 곳을 찾아 스스로 주행합니다.</p>
-                            
-                            <div class="grid grid-2">
-                                <div class="info-box">
-                                    <h4>👀 로봇의 눈과 목 연결하기</h4>
-                                    <ul>
-                                        <li><strong>초음파 센서 (눈):</strong> 소리를 쏴서(Trig: 11번) 다시 돌아오는 시간(Echo: 12번)으로 벽까지의 거리를 자로 재듯 측정해요.</li>
-                                        <li><strong>서보 모터 (목):</strong> 신호선(주황색)을 4번에 꽂아 왼쪽/오른쪽으로 목을 돌릴 수 있게 해요.</li>
-                                    </ul>
-                                </div>
-                                <div class="info-box">
-                                    <h4>🧠 자동차가 스스로 생각하는 순서</h4>
-                                    <ol>
-                                        <li>앞쪽을 보며 씩씩하게 직진해요.</li>
-                                        <li>눈앞 20cm 안에 벽이 나타나면 급정거!</li>
-                                        <li>목을 오른쪽(30도), 왼쪽(150도)으로 돌리며 어느 쪽이 뚫려있나 재보아요.</li>
-                                        <li>더 멀리 뚫려있는 넓은 길을 선택해서 방향을 꺾고 다시 달려요!</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- 초음파 센서 원리 카드 (PDF 학습자료 참고) -->
-                    <div class="card intro-card" style="margin-top: 2rem;">
+                    <div class="card intro-card" style="margin-top: 0; margin-bottom: 2rem;">
                         <div class="card-body">
                             <h3>🦇 초음파 센서(HC-SR04)의 거리 계산 원리</h3>
                             <p>초음파 센서는 박쥐처럼 <strong>초음파(귀에 들리지 않는 높은 소리)</strong>를 발사한 뒤, 물체에 부딪혀 돌아오는 시간을 계산해서 거리를 알아내요.</p>
