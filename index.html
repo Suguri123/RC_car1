@@ -767,13 +767,14 @@ void loop() {
                                     <button class="btn btn-outline bt-tab-btn" data-target-code="3" style="font-weight: 700; border: none; background: transparent; font-size: 0.95rem; padding: 0.5rem 1rem;">블루투스 원격 조종 3 (아이폰)</button>
                                 </div>
                             </div>
-                            <div class="code-actions" style="display: flex; gap: 0.5rem; justify-content: flex-start; width: 100%;">
+                            <div class="code-actions" style="display: flex; gap: 0.5rem; justify-content: flex-start; align-items: center; width: 100%; flex-wrap: wrap;">
                                 <button class="btn btn-sm btn-outline btn-copy" id="bt-copy-btn" data-source="code-bluetooth-1">
                                     <i data-lucide="copy"></i> 복사하기
                                 </button>
                                 <button class="btn btn-sm btn-primary btn-download" id="bt-download-btn" data-filename="Bluetooth_Control.ino" data-source="code-bluetooth-1">
                                     <i data-lucide="download"></i> 다운로드
                                 </button>
+                                <span id="iphone-note" style="display: none; font-size: 0.9rem; color: var(--text-light); font-weight: 600; margin-left: 0.5rem; vertical-align: middle;">* Bluefy 앱 브라우저 기준으로 작성되었습니다</span>
                             </div>
                         </div>
                         <div class="card-body no-padding code-version-body" id="bt-code-container-1">

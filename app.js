@@ -109,6 +109,16 @@ document.addEventListener("DOMContentLoaded", () => {
             if (btDownloadBtn) {
                 btDownloadBtn.setAttribute("data-source", `code-bluetooth-${targetCode}`);
             }
+
+            // Toggle iPhone note visibility
+            const iphoneNote = document.getElementById("iphone-note");
+            if (iphoneNote) {
+                if (targetCode === "3") {
+                    iphoneNote.style.display = "inline-block";
+                } else {
+                    iphoneNote.style.display = "none";
+                }
+            }
         });
     });
 
